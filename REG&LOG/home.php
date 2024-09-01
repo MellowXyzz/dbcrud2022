@@ -12,7 +12,7 @@ $koneksi = mysqli_connect($server, $user, $password, $database) or die(mysqli_er
 $q = mysqli_query($koneksi, "SELECT kode FROM tbarang order by kode desc limit 1");
 $datax = mysqli_fetch_array($q);
 if($datax){
-  $no_terakhir = substr($datax['kode'], -3);
+  $no_terakhir = substr ($datax['kode'], -3);
   $no = $no_terakhir + 1;
 
   if($no > 0 and $no <10){
@@ -134,7 +134,7 @@ if (isset($_GET['hal'])) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CRUD ELO PB</title>
+  <title>Data Inventaris</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
@@ -207,7 +207,7 @@ if (isset($_GET['hal'])) {
 
                 <div class="text-center">
                   <hr>
-                  <button class="btn btn-primary" name="bsimpan" type="submit" onclick="return confirm('Apakah anda Yakin akan Simpan Data ini?')">Simpan</button>
+                  <button class="btn btn-primary" name="bsimpan" type="submit">Simpan</button>
                   <button class="btn btn-danger" name="bkosongkan" type="reset">Kosongkan</button>
                 </div>
 
